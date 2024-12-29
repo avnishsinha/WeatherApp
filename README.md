@@ -69,12 +69,6 @@ To set up the WeatherApp locally:
 
 ---
 
-## 🌐 Live Demo
-
-Check out the live version of WeatherApp here: [WeatherApp Live](#) (Update this with your live deployment link.)
-
----
-
 ## 🌐 API Usage
 
 This application uses the OpenWeatherMap API. To run the app locally, you need an API key:
@@ -104,7 +98,7 @@ If you have suggestions, feature requests, or want to contribute:
 
 ## 📜 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
 ---
 
