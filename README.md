@@ -97,8 +97,8 @@ This application uses the OpenWeatherMap API. To run the app locally, you need a
 
 If you have suggestions, feature requests, or want to contribute:
 
-- Email: [Your Email Here]
-- LinkedIn: [Your LinkedIn Profile Here]
+- Email: aks526@nau.edu
+- LinkedIn: https://www.linkedin.com/in/avnishkumarsinha/
 
 ---
 
