@@ -15,7 +15,7 @@ A beautiful, responsive weather application that provides real-time weather upda
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://your-username.github.io/WeatherApp) _(Replace with your actual demo link)_
+[View Live Demo](https://weather-app-phi-drab-87.vercel.app/)
 
 ## 🛠️ Technologies Used
 
