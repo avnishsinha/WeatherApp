@@ -2,8 +2,6 @@
 
 A beautiful, responsive weather application that provides real-time weather updates for any city worldwide. Built with modern web technologies and featuring a glassmorphism design.
 
-![Weather App Demo](https://img.shields.io/badge/Demo-Live-brightgreen) ![Version](https://img.shields.io/badge/version-1.0.0-blue) ![License](https://img.shields.io/badge/license-MIT-green)
-
 ## ✨ Features
 
 - 🔍 **Real-time Weather Search** - Get current weather for any city
@@ -18,14 +16,6 @@ A beautiful, responsive weather application that provides real-time weather upda
 ## 🚀 Live Demo
 
 [View Live Demo](https://your-username.github.io/WeatherApp) _(Replace with your actual demo link)_
-
-## 📸 Screenshots
-
-### Desktop View
-![Desktop Screenshot](https://via.placeholder.com/800x500/4a90e2/ffffff?text=Desktop+View)
-
-### Mobile View
-![Mobile Screenshot](https://via.placeholder.com/300x600/4a90e2/ffffff?text=Mobile+View)
 
 ## 🛠️ Technologies Used
 
