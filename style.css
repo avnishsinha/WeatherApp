@@ -1,87 +1,358 @@
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #7bb3f0;
+  --accent-color: #f39c12;
+  --text-primary: #ffffff;
+  --text-secondary: #e8e8e8;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.3);
+  --shadow-heavy: rgba(0, 0, 0, 0.5);
+}
+
 body {
   font-family: "Outfit", sans-serif;
-  background-image: url("	https://images3.alphacoders.com/109/1091500.jpg");
-  background-size: cover;
-  background-position: top center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
+
+/* Animated background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80") no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+  filter: brightness(0.7);
+}
+
 .app-wrap {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: linear-gradient(
+  backdrop-filter: blur(10px);
+  background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.6)
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.4)
   );
 }
+
+/* Header styles */
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 15px 15px;
+  padding: 2rem 1.5rem 1rem;
+  text-align: center;
 }
-header input {
+
+.app-title {
+  color: var(--text-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px var(--shadow-medium);
+  letter-spacing: -1px;
+}
+
+.search-container {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.search-box {
   width: 100%;
-  max-width: 280px;
-  padding: 10px 15px;
+  padding: 1rem 1.5rem;
+  padding-right: 3rem;
   border: none;
   outline: none;
-  background-color: rgba(18, 18, 18, 0.4);
-  border-radius: 16px;
-  border-bottom: 3px solid #df8e00;
-
-  font-size: 20px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border-radius: 50px;
+  border: 2px solid var(--glass-border);
+  font-size: 1.1rem;
   font-weight: 300;
-  transition: 0.2s ease-out;
-  color: #eeeeee;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px var(--shadow-light);
 }
-header input:focus {
-  background-color: rgba(18, 18, 18, 0.8);
+
+.search-box::placeholder {
+  color: var(--text-secondary);
 }
+
+.search-box:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px var(--shadow-medium);
+}
+
+.search-icon {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Main content */
 main {
-  flex: 1 1 100%;
-  padding: 25px 25px 50px;
+  flex: 1;
+  padding: 1rem 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
 }
+
+/* Location section */
+.location {
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.6s ease-out;
+}
+
 .location .city {
-  color: #eeeeee;
-  font-size: 32px;
-  font-weight: 500;
-  margin-bottom: 5px;
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px var(--shadow-medium);
 }
+
 .location .date {
-  color: #eeeeee;
-  font-size: 16px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 300;
+  opacity: 0.9;
 }
+
+/* Current weather */
+.current {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  border: 1px solid var(--glass-border);
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 20px 60px var(--shadow-light);
+  transition: transform 0.3s ease;
+  animation: fadeInUp 0.8s ease-out;
+  width: 100%;
+  max-width: 400px;
+}
+
+.current:hover {
+  transform: translateY(-5px);
+}
+
+.weather-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: block;
+  filter: drop-shadow(2px 2px 4px var(--shadow-medium));
+}
+
+.weather-icon.sunny::before { content: '☀️'; }
+.weather-icon.cloudy::before { content: '☁️'; }
+.weather-icon.rainy::before { content: '🌧️'; }
+.weather-icon.stormy::before { content: '⛈️'; }
+.weather-icon.snowy::before { content: '❄️'; }
+.weather-icon.foggy::before { content: '🌫️'; }
+.weather-icon.default::before { content: '🌤️'; }
+
 .current .temp {
-  color: #eeeeee;
-  font-size: 102px;
+  color: var(--text-primary);
+  font-size: 5rem;
   font-weight: 900;
-  margin: 30px 0;
-  text-shadow: 2px 8px rgba(0, 0, 0, 0.5);
+  margin: 1rem 0;
+  text-shadow: 3px 3px 6px var(--shadow-heavy);
+  line-height: 1;
 }
+
 .current .temp span {
-  font-weight: 200;
+  font-size: 3rem;
+  font-weight: 300;
+  opacity: 0.8;
 }
+
 .current .weather {
-  color: #eeeeee;
-  font-size: 32px;
-  font-weight: 700;
-  font-style: italic;
-  margin-bottom: 15px;
-  text-shadow: 0 3px rgba(0, 0, 0, 0.4);
-}
-.current .hi-low {
-  color: #eeeeee;
-  font-size: 24px;
+  color: var(--text-primary);
+  font-size: 1.8rem;
   font-weight: 500;
-  text-shadow: 0 3px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px var(--shadow-medium);
+  text-transform: capitalize;
+}
+
+.current .hi-low {
+  color: var(--text-secondary);
+  font-size: 1.3rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* Additional info cards */
+.additional-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.info-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 30px var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px var(--shadow-medium);
+}
+
+.info-label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.info-value {
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px var(--shadow-medium);
+}
+
+/* Footer */
+footer {
+  padding: 1.5rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--glass-border);
+}
+
+footer p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Loading state */
+.loading-state {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.loading-state::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--glass-border);
+  border-top-color: var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2rem;
+  }
+  
+  .current .temp {
+    font-size: 4rem;
+  }
+  
+  .current .temp span {
+    font-size: 2.5rem;
+  }
+  
+  .location .city {
+    font-size: 1.5rem;
+  }
+  
+  .additional-info {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .info-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 1.5rem 1rem 1rem;
+  }
+  
+  .app-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .current {
+    padding: 2rem 1.5rem;
+  }
+  
+  .current .temp {
+    font-size: 3.5rem;
+  }
+  
+  .current .temp span {
+    font-size: 2rem;
+  }
 }

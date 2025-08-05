@@ -5,28 +5,60 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>weather App</title>
+	<title>Weather App - Real-time Weather Updates</title>
+	<meta name="description" content="Get real-time weather updates for any city worldwide. Beautiful, responsive weather application.">
 	<link rel="stylesheet" href="style.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 	<div class="app-wrap">
 		<header>
-			<input type="text" autocomplete="off" class="search-box" placeholder="Search for a city">
+			<h1 class="app-title">Weather App</h1>
+			<div class="search-container">
+				<input type="text" 
+					   autocomplete="off" 
+					   class="search-box" 
+					   placeholder="Search for a city..."
+					   aria-label="Search for weather by city name">
+				<div class="search-icon">🔍</div>
+			</div>
 		</header>
 
 		<main>
 			<section class="location">
-				<div class="city">Flagstaff, Arizona </div>
+				<div class="city">Flagstaff, Arizona</div>
 				<div class="date">Tuesday 15 August</div>
 			</section>
 
 			<div class="current">
+				<div class="weather-icon sunny"></div>
 				<div class="temp">15<span>°C</span></div>
 				<div class="weather">Sunny</div>
 				<div class="hi-low">13°C / 16°C</div>
 			</div>
+			
+			<div class="additional-info">
+				<div class="info-card">
+					<span class="info-label">Feels like</span>
+					<span class="info-value" id="feels-like">--°C</span>
+				</div>
+				<div class="info-card">
+					<span class="info-label">Humidity</span>
+					<span class="info-value" id="humidity">--%</span>
+				</div>
+				<div class="info-card">
+					<span class="info-label">Wind Speed</span>
+					<span class="info-value" id="wind-speed">-- km/h</span>
+				</div>
+			</div>
 		</main>
+		
+		<footer>
+			<p>&copy; 2025 Weather App. Built by Avnish Sinha</p>
+		</footer>
 	</div>
 	<script src="index.js"></script>
 </body>

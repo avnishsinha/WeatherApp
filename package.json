@@ -1,0 +1,39 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "A beautiful, responsive weather application with real-time weather updates",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=8080",
+    "dev": "live-server --port=3000",
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [
+    "weather",
+    "app",
+    "javascript",
+    "html5",
+    "css3",
+    "responsive",
+    "glassmorphism",
+    "openweathermap"
+  ],
+  "author": {
+    "name": "Avnish Kumar Sinha",
+    "email": "aks526@nau.edu",
+    "url": "https://www.linkedin.com/in/avnishkumarsinha/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/WeatherApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/WeatherApp/issues"
+  },
+  "homepage": "https://your-username.github.io/WeatherApp",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "gh-pages": "^4.0.0"
+  }
+}
